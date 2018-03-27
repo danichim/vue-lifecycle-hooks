@@ -8,15 +8,27 @@
 <body>
 
     <h2>What are Lifecycle methods?</h2>
+    <p>Lifecycle methods serve as a viewpoint into how our built components work behind the scenes. You often need to know when
+            your component is created, added to the DOM, updated, or destroyed. They provide you with methods that enable you
+            trigger different actions at different junctures of a component's lifecycle. They also auto-bind to your component
+            so that you can use the component's state and methods. Actions of lifecycle methods can be broken down into four
+            categories:</p>
+    <ol>
+        <li>Creation (Initialization)</li>
+        <li>Mounting (DOM Insertion)</li>
+        <li>Updating (Diff & Re-render)</li>
+        <li>Destruction (Teardown)</li>
+    </ol>
     <hr/>
     <h2>Lifecycle Diagram</h2>
+    <img src="diagram.png" />
     <hr/>
     <h2>1. beforeCreate and created</h2>
     <hr/>
     <h2>2. beforeMount and mounted</h2>
     <hr/>
     <h2>Created vs Mounted</h2>
-    <hr/>
+    <a class="jsbin-embed" href="http://jsbin.com/yezirew/embed?html,js,console">JS Bin on jsbin.com</a><script src="http://static.jsbin.com/js/embed.min.js?4.1.4"></script>    <hr/>
     <h2>3. beforeUpdate and updated</h2>
     <hr/>
     <h2>4. beforeDestroy and destroyed</h2>
@@ -24,7 +36,7 @@
     <h2>5. Other Hooks (activated and deactivated)</h2>
     <hr/>
     <h2>Conclusion</h2>
- 
+   
     
 </body>
 
