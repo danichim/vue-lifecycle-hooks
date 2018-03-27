@@ -23,20 +23,73 @@
     <h2>Lifecycle Diagram</h2>
     <img src="diagram.png" />
     <hr/>
+    
     <h2>1. beforeCreate and created</h2>
+    <p>Creation hooks are the very first hooks that run in your component. They allow you to perform actions before your component has even been added to the DOM. Unlike any of the other hooks, creation hooks are also run during server-side rendering.</p>
+    <h4>beforeCreate</h4>
+    <p>The <code>beforeCreate</code> hook runs at the very initialization of your component. Here, <code>data</code> is still not reactive and <code>events</code> that occur during the component's lifecycle have not been set up yet</p>
+    <p><iframe src="https://pastebin.com/embed_iframe/ENNet86s" style="border:none;width:100%;height:300px;"></iframe></p>
+    <h4>created</h4>
+    <p><code>created()</code>: The <code>created()</code> hook is invoked when Vue has set up events and data observation. Here, events are active and access to reactive data is enabled though templates have not yet been mounted or rendered. Check out the code block below:</p>
+    <p><iframe src="https://pastebin.com/embed_iframe/6GwU5Gs1" style="border:none;width:100%;height:300px;"></iframe></p>
     <hr/>
+    
     <h2>2. beforeMount and mounted</h2>
+    <p>Mounting hooks are often the most-used hooks, for better or worse. They allow you to access your component immediately before and after the first render. They do not, however, run during server-side rendering.<br/>Should be used if the DOM of your component needs to be modified immediately before or after it is initially rendered.</p>
+    <p>Do not use if: You need to fetch some data for your component on initialization. Use <code>created</code> (or <code>created</code> + <code>activated</code> for <code>keep-alive</code> components) for this instead, especially if you need that data during server-side rendering.</p>
+    <h4>beforeMount</h4>
+    <p><code>beforeMount()</code>: The <code>beforeMount()</code> method is invoked after our template has been compiled and our virtual DOM updated by Vue. After this, the $el property is added to the Vue instance, the native DOM is updated and the mounted() method is invoked.</p>
+    <p><iframe src="https://pastebin.com/embed_iframe/DwmCaNbB" style="border:none;width:100%;height:200px;"></iframe></p>
+    <h4>mounted</h4>
+    <p>In the <code>mounted()</code> hook, you will have full access to the reactive component, templates, and rendered DOM (via. <code>this.$el</code>). Mounted is the most-often used lifecycle hook. The most frequently used patterns are fetching data for your component (use <code>created</code> for this instead,) and modifying the DOM, often to integrate non-<code>Vue</code> libraries.</p>
+    <p><iframe src="https://pastebin.com/embed_iframe/vDJbdz6M" style="border:none;width:100%;height:300px;"></iframe></p>
     <hr/>
+    
     <h2>Created vs Mounted</h2>
     <a class="jsbin-embed" href="http://jsbin.com/yezirew/embed?html,js,console">JS Bin on jsbin.com</a><script src="http://static.jsbin.com/js/embed.min.js?4.1.4"></script>    <hr/>
+    <hr/>
+
     <h2>3. beforeUpdate and updated</h2>
+    <p>Updating methods are useful for debugging. They are called whenever a reactive property used by your component changes or re-renders. The component's DOM would have been updated when this hook is called so you can use updating methods to perform DOM dependent operations. It's advised you don't use updating methods to change state, <a href="https://vuejs.org/v2/api/#computed" target="_blank">computed properties</a> or <a href="https://vuejs.org/v2/api/#watch" target="_blank">watchers</a> are best fit for that instead.</p>
+
+    <h4>beforeUpdate</h4>
+    <p><code>beforeUpdate()</code>:  xxxx</p>
+    <p><iframe src="https://pastebin.com/embed_iframe/xxxx" style="border:none;width:100%;height:200px;"></iframe></p>
+    <h4>updated</h4>
+    <p><code>updated()</code>:  xxxx</p>
+    <p><iframe src="https://pastebin.com/embed_iframe/xxxx" style="border:none;width:100%;height:300px;"></iframe></p>
     <hr/>
+    
     <h2>4. beforeDestroy and destroyed</h2>
+    <p></p>
+
+    <h4>beforeDestroy</h4>
+    <p><code>beforeDestroy()</code>:  xxxx</p>
+    <p><iframe src="https://pastebin.com/embed_iframe/xxxx" style="border:none;width:100%;height:200px;"></iframe></p>
+    <h4>destroyed</h4>
+    <p><code>destroyed()</code>:  xxxx</p>
+    <p><iframe src="https://pastebin.com/embed_iframe/xxxx" style="border:none;width:100%;height:300px;"></iframe></p>
+
     <hr/>
+    
     <h2>5. Other Hooks (activated and deactivated)</h2>
+    <p>There are two other hooks,
+        <code><em>activated</em></code> and
+        <code><em>deactivated</em></code>. These are for
+        <code><em>keep-alive</em></code> components, a topic that is outside the scope of this article. Suffice it to say that they allow you to detect when
+        a component that is wrapped in a
+        <code><em>&lt;keep-alive&gt;&lt;/keep-alive&gt;</em></code> tag is toggled on or off. You might use them to fetch data for your component or handle state changes, effectively
+        behaving as
+        <code><em>created</em></code> and
+        <code><em>beforeDestroy</em></code> without the need to do a full component rebuild.</p>
     <hr/>
+    
     <h2>Conclusion</h2>
-   
+    <p>That's it. That's all Vue lifecycle methods are and nothing more. Now you should be able to visualize the journey of
+            a Vue instance whenever it is initialized and as well customize you own code using these various hooks or methods
+            should the need arise. You can look up also at
+            <a href="https://assist-software.net/blog/beginners-intro-vuejs-20">A Beginner`s Intro to Vue.js 2.0</a> and <a href="https://vuejs.org/v2/guide/" target="_blank">documentation</a> for other methods and properties to use alongside lifecycle methods when creating your components.</p>
+    
     
 </body>
 
