@@ -53,22 +53,22 @@
     <p>Updating methods are useful for debugging. They are called whenever a reactive property used by your component changes or re-renders. The component's DOM would have been updated when this hook is called so you can use updating methods to perform DOM dependent operations. It's advised you don't use updating methods to change state, <a href="https://vuejs.org/v2/api/#computed" target="_blank">computed properties</a> or <a href="https://vuejs.org/v2/api/#watch" target="_blank">watchers</a> are best fit for that instead.</p>
 
     <h4>beforeUpdate</h4>
-    <p><code>beforeUpdate()</code>:  xxxx</p>
-    <p><iframe src="https://pastebin.com/embed_iframe/xxxx" style="border:none;width:100%;height:200px;"></iframe></p>
+    <p><code>beforeUpdate()</code>: hook runs after data changes on your component and the update cycle begins, right before the DOM is patched and re-rendered. It allows you to get the new state of any reactive data on your component before it actually gets rendered.</p>
+    <p><iframe src="https://pastebin.com/embed_iframe/G5h0uJ7G" style="border:none;width:100%;height:400px;"></iframe></p>
     <h4>updated</h4>
-    <p><code>updated()</code>:  xxxx</p>
-    <p><iframe src="https://pastebin.com/embed_iframe/xxxx" style="border:none;width:100%;height:300px;"></iframe></p>
+    <p><code>updated()</code>: The hook hook runs after data changes on your component and the DOM re-renders. If you need to access the DOM after a property change, here is probably the safest place to do it.</p>
+    <p><iframe src="https://pastebin.com/embed_iframe/vRdaVCA1" style="border:none;width:100%;height:400px;"></iframe></p>
     <hr/>
     
     <h2>4. beforeDestroy and destroyed</h2>
-    <p></p>
+    <p><code>Destruction hooks</code> are used in the final moments of a component's lifecycle. They allow you perform actions such as cleanup when your component is destroyed and are executed when your component is torn down and removed from the DOM.</p>
 
     <h4>beforeDestroy</h4>
-    <p><code>beforeDestroy()</code>:  xxxx</p>
-    <p><iframe src="https://pastebin.com/embed_iframe/xxxx" style="border:none;width:100%;height:200px;"></iframe></p>
+    <p><code>beforeDestroy()</code>: is fired right before teardown. Your component will still be fully present and functional. If you need to cleanup events, <code>beforeDestroy()</code> is the best time to do that.</p>
+    <p><iframe src="https://pastebin.com/embed_iframe/8gTvFm2q" style="border:none;width:100%;height:300px;"></iframe></p>
     <h4>destroyed</h4>
-    <p><code>destroyed()</code>:  xxxx</p>
-    <p><iframe src="https://pastebin.com/embed_iframe/xxxx" style="border:none;width:100%;height:300px;"></iframe></p>
+    <p><code>destroyed()</code>: This hook is called after your component has been already <code>destroyed</code>, its directives have been unbound and its event listeners have been removed. The <code>destroyed()</code> can be used to do any last minute cleanup or informing a remote server that the component was destroyed. Check out the example below:</p>
+    <p><iframe src="https://pastebin.com/embed_iframe/3pJd9h8V" style="border:none;width:100%;height:300px;"></iframe></p>
 
     <hr/>
     
